@@ -1,0 +1,45 @@
+{
+  "name": "firaw-pdf-editor",
+  "productName": "Firaw - Pdf Editor",
+  "version": "1.0.0",
+  "description": "Editor de PDF local para Windows com IA local e integração opcional com Stirling PDF",
+  "main": "src/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "web": "node web/server.cjs",
+    "web:open": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/open-local-page.ps1",
+    "build:lab": "node tools/build-lab.cjs",
+    "smoke": "electron . --smoke",
+    "test": "node --test tests/*.test.cjs",
+    "dist": "electron-builder --win portable --x64",
+    "dist:store": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/build-store.ps1"
+  },
+  "author": "Firawynix",
+  "license": "MIT",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.10.38"
+  },
+  "devDependencies": {
+    "electron": "^43.7.5",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "br.com.firawynix.pdfeditor",
+    "productName": "Firaw - Pdf Editor",
+    "directories": { "output": "release" },
+    "files": ["src/**/*", "assets/**/*", "node_modules/pdfjs-dist/build/**/*", "package.json"],
+    "win": {
+      "icon": "assets/icon.ico",
+      "artifactName": "Firaw-Pdf-Editor-${version}-${arch}.${ext}",
+      "target": ["portable"],
+      "signtoolOptions": {
+        "certificateSha1": "668BEF56480FCA8EB1B0BC3B102A6A9CEC554CC4",
+        "signingHashAlgorithms": ["sha256"],
+        "publisherName": "Firawynix"
+      }
+    }
+  }
+}

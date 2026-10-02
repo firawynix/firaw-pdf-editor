@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; worker-src 'self' blob:; connect-src 'self'; object-src 'none'; frame-src 'none'">
+  <title>Firaw - Pdf Editor</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><img src="../assets/logo.svg" alt=""><div><strong>Firaw <span>Pdf Editor</span></strong><small>SEU PDF. SEU CONTROLE.</small></div></div>
+      <div class="local-badge"><i></i> EDIÇÃO LOCAL <span id="fileTop">Nenhum documento aberto</span></div>
+      <div class="top-actions"><button id="openBtn" class="button primary">Abrir PDF</button><button id="saveBtn" class="button subtle" disabled>Salvar como…</button></div>
+    </header>
+    <div class="main">
+      <aside class="pages-panel">
+        <div class="section-kicker">01 / DOCUMENTO</div><h2>Páginas</h2>
+        <div id="docInfo" class="doc-info">Abra um PDF para começar.</div>
+        <div id="thumbs" class="thumbs"><div class="empty-small">As páginas aparecem aqui.</div></div>
+        <div class="sidebar-foot"><button id="mergeBtn" class="button subtle full" disabled>＋ Juntar outro PDF</button><button id="extractBtn" class="button subtle full" disabled>↗ Extrair página atual</button></div>
+      </aside>
+      <main class="workspace">
+        <div class="workspace-bar"><div><span class="section-kicker">02 / ÁREA DE TRABALHO</span><h1 id="workspaceTitle">Seu documento, do seu jeito.</h1></div><div id="pageControls" class="page-controls"><button id="prevBtn" aria-label="Página anterior">‹</button><span id="pageIndicator">— / —</span><button id="nextBtn" aria-label="Próxima página">›</button><button id="zoomOut" aria-label="Diminuir zoom">−</button><span id="zoomLabel">100%</span><button id="zoomIn" aria-label="Aumentar zoom">＋</button></div></div>
+        <div class="toolstrip"><button id="selectTool" class="tool active" disabled>▣ Selecionar área</button><button id="coverBtn" class="tool" disabled>◻ Ocultar área</button><button id="signatureBtn" class="tool" disabled>✎ Melhorar assinatura</button><button id="textBtn" class="tool" disabled>＋ Texto</button><span class="tool-spacer"></span><button id="rotateBtn" class="tool" disabled>↻ Girar 90°</button><button id="deleteBtn" class="tool danger" disabled>⌫ Excluir página</button></div>
+        <div id="stage" class="stage"><div id="emptyState" class="empty-state"><div class="empty-mark">▤</div><span class="eyebrow">FIRAW / PDF EDITOR</span><h2>Uma mesa de trabalho para seus PDFs.</h2><p>Abra um documento para revisar páginas, ajustar áreas, melhorar assinaturas e trabalhar com IA no próprio computador.</p><button id="emptyOpen" class="button primary">Escolher PDF <span>→</span></button></div><div id="pageShell" class="page-shell hidden"><canvas id="pdfCanvas"></canvas><div id="selection" class="selection hidden"></div></div></div>
+        <div class="statusbar"><span id="status">Pronto para abrir um PDF.</span><span>Os arquivos ficam neste computador.</span></div>
+      </main>
+      <aside class="inspector">
+        <div class="section-kicker">03 / ASSISTENTE</div><h2>Peça com suas palavras.</h2><p class="inspector-intro">Descreva a mudança. A IA local propõe ações para você revisar antes de aplicar.</p>
+        <div class="ai-card"><div class="card-title"><span class="sparkle">✦</span><div><strong>IA no computador</strong><small id="aiAvailability">Verificando instalação…</small></div></div><div id="hardware" class="hardware">Aguardando leitura do computador…</div><div id="recommendation" class="recommendation">Calculando melhor modelo…</div><div class="ai-install-row"><button id="installModel" class="button outline" disabled>Instalar recomendado</button><button id="scanAi" class="icon-button" title="Verificar novamente">↻</button></div><div id="installProgress" class="progress-note"></div><a id="ollamaLink" href="#" class="micro-link hidden">Instalar Ollama ↗</a></div>
+        <label class="field-label" for="modelSelect">MODELO INSTALADO</label><select id="modelSelect"><option value="">Nenhum modelo encontrado</option></select>
+        <label class="field-label" for="prompt">O QUE VOCÊ QUER AJUSTAR?</label><textarea id="prompt" placeholder="Ex.: Na página 2, oculte a linha que selecionei e melhore o contraste da assinatura."></textarea>
+        <div id="selectionInfo" class="selection-info">Selecione uma área no documento para indicar o local exato.</div>
+        <button id="planBtn" class="button ai-button full" disabled>✦ Criar proposta com IA</button>
+        <div id="planCard" class="plan-card hidden"><div class="section-kicker">PROPOSTA PARA REVISÃO</div><p id="planSummary"></p><div id="planActions"></div><button id="applyPlan" class="button primary full">Aplicar proposta</button><button id="discardPlan" class="text-button full">Descartar</button></div>
+        <div class="divider"></div><div class="section-kicker">04 / STIRLING PDF LOCAL</div><h3>Ferramentas avançadas</h3><p class="small-copy" id="stirlingStatus">Verificando instalação local…</p><button id="openStirling" class="button subtle full">Abrir Stirling PDF ↗</button><button id="compressBtn" class="button subtle full" disabled>Comprimir via Stirling local</button><button id="getStirling" class="text-button full">Obter Stirling PDF oficial ↗</button>
+        <p class="note">“Ocultar área” cobre visualmente o conteúdo; não remove os dados internos do PDF. “Melhorar assinatura” ajusta contraste da imagem selecionada, sem criar uma nova assinatura.</p>
+      </aside>
+    </div>
+  </div>
+  <script type="module" src="renderer.mjs"></script>
+</body>
+</html>

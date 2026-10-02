@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Firaw Pdf Editor">
+ <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#79eff5"/><stop offset="1" stop-color="#11a9ce"/></linearGradient></defs>
+ <rect x="3" y="3" width="90" height="90" rx="22" fill="#102738" stroke="#327d8e" stroke-width="2"/>
+ <path d="M27 19h29l14 14v43H27z" fill="none" stroke="url(#g)" stroke-width="5" stroke-linejoin="round"/>
+ <path d="M56 19v15h14M35 49h27M35 59h24" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M57 76l9-17 6 4-9 14-8 5z" fill="#e4fdff"/>
+</svg>

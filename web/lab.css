@@ -1,0 +1,7 @@
+.lab-disclosure{margin:0 0 20px;padding:13px;border:1px solid #398a9b;border-radius:9px;background:#123643;color:#c5e9ee;font-size:11px;line-height:1.55}
+.lab-disclosure strong{display:block;margin-bottom:5px;color:#eefcfd;font-size:12px}
+.lab-disclosure a{display:inline-block;margin-top:8px;padding:9px 12px;border:1px solid #57d5e4;border-radius:7px;color:#b8f3f8;text-decoration:none;font-weight:800}
+.lab-disclosure a:hover{background:#205163}
+body.lab-public .ai-card,body.lab-public .inspector-intro,body.lab-public label[for="modelSelect"],body.lab-public #modelSelect,body.lab-public label[for="prompt"],body.lab-public #prompt,body.lab-public #selectionInfo,body.lab-public #planBtn,body.lab-public #planCard,body.lab-public .inspector .divider,body.lab-public .inspector h3,body.lab-public #stirlingStatus,body.lab-public #openStirling,body.lab-public #compressBtn,body.lab-public #getStirling,body.lab-public .inspector .note{display:none!important}
+body.lab-public .inspector h2{margin-bottom:16px}
+@media(max-width:850px){body.lab-public .inspector{padding:20px}}

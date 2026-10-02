@@ -1,0 +1,14 @@
+Política de privacidade — Firaw - Pdf Editor
+Atualizada em 1º de outubro de 2026.
+
+O Firaw - Pdf Editor permite abrir, visualizar e editar arquivos PDF no computador do usuário. A Firawynix não recebe os documentos, imagens ou pedidos feitos no aplicativo e não inclui telemetria nem publicidade no editor.
+
+Dados processados no dispositivo: PDFs e imagens escolhidos pelo usuário; texto extraído das páginas para orientar propostas de edição; informações básicas de CPU, RAM e GPU para recomendar um modelo de IA; e os arquivos de saída salvos no local escolhido pelo usuário. O aplicativo não cria uma conta Firawynix nem envia esses dados a servidores Firawynix.
+
+IA opcional: quando o usuário solicita uma proposta, o aplicativo envia o pedido, texto da página e, para modelos visuais, uma imagem dessa página ao Ollama em 127.0.0.1:11434, no próprio computador. O aplicativo mostra a proposta para revisão antes de aplicar mudanças. A instalação de um modelo só começa após o usuário escolher essa ação; o Ollama poderá acessar a internet para baixar o modelo. O funcionamento e as configurações do Ollama são regidos por suas próprias políticas.
+
+Stirling PDF opcional: o aplicativo pode abrir a instalação Windows oficial do Stirling PDF. Se o usuário acionar a compressão e houver um servidor Stirling local em 127.0.0.1:8080, o PDF será enviado a esse serviço local. O comportamento do Stirling PDF, incluindo eventual conexão configurada pelo usuário com serviços externos, depende das opções desse produto.
+
+Ao clicar nos links para obter Ollama ou Stirling PDF, o navegador abre os sites oficiais dos respectivos fornecedores. A navegação nesses sites segue as políticas de privacidade deles. A Microsoft Store processa a instalação e atualização da edição distribuída pela Store conforme as políticas da Microsoft.
+
+Os documentos originais não são substituídos automaticamente. Os arquivos gerados permanecem no local escolhido pelo usuário até que ele os exclua. Para dúvidas e solicitações sobre esta política, contate hugo@firawynix.com.br ou acesse https://firawynix.com.br/.

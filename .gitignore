@@ -1,0 +1,23 @@
+node_modules/
+release/
+lab-dist/
+
+# Dados locais, certificados e arquivos gerados
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+*.pdf
+*.appx
+*.msix
+*.exe
+
+# Captura administrativa usada durante a submissão à Store
+store/submissao-ms-store.png
+
+# Rascunhos visuais não usados pelo aplicativo
+assets/firaw-logo.svg
+web/preview-local.png
